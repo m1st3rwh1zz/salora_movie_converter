@@ -47,7 +47,7 @@ function convert_movies () {
   output="${output%.*}.mp4"
   echo "Output: $output"
   echo
-  ffmpeg -n -i "$input" -vf "scale=(iw*sar)*max(720/(iw*sar)\,405/ih):ih*max(720/(iw*sar)\,405/ih), crop=720:405" -c:v mpeg4 -q:v 16 -c:a mp3 -q:a 4 "$output"
+  ffmpeg -n -i "$input" -vf "scale=(iw*sar)*max(720/(iw*sar)\,405/ih):ih*max(720/(iw*sar)\,405/ih), crop=720:405" -c:v mpeg4 -q:v 8 -c:a mp3 -q:a 4 "$output"
   echo
 }
 export -f convert_movies
